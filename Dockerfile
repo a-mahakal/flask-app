@@ -8,4 +8,4 @@ RUN pip3 install -r requirements.txt
 
 COPY . .
 
-CMD [ "/usr/local/bin/uvicorn", "main:app", "--reload" ]
+CMD [ "/usr/local/bin/uvicorn", "main:app", "--host=0.0.0.0" ]

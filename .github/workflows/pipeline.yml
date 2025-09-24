@@ -1,0 +1,20 @@
+name: FastAPI TODO
+
+on:
+  workflow_dispatch: # Manual trigger
+
+jobs:
+  build-docker-image:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v5.0.0
+        with:
+          ref: main
+
+      - name: build docker image
+        run: |
+          #!/bin/bash
+          
+          docker build -t flask-app:v1 .
