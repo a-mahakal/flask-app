@@ -24,3 +24,9 @@ jobs:
         with:
           username: anuragdocker218
           password: ${{ secrets.DOCKER_PASSWORD }}
+      
+      - name: push image to docker hub
+        run: |
+          #!/bin/bash
+          
+          docker push anuragdocker218/devops:flask-app-v1
